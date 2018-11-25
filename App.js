@@ -3,6 +3,7 @@ import { FlatList, ScrollView, Alert, Platform, Button, StyleSheet, Text, View, 
 import { Greeting } from './Greeting.js';
 import { Blink } from './Blink.js';
 import {PizzaTranslator} from "./PizzaTranslator";
+import {FadeInView} from "./FadeInView";
 
 
 const styles = StyleSheet.create({
@@ -51,15 +52,12 @@ export default class App extends React.Component {
         return (
             <View style={styles.container}>
 
-                <View style={styles.buttonContainer}>
-                    <Button
-                        onPress={this._onPressButton}
-                        title="Press Me"
-                    />
-                </View>
+                <FadeInView style={{width: 250, height: 50, backgroundColor: 'powderblue'}}>
+                    <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>Fading in</Text>
+                </FadeInView>
 
                 <PizzaTranslator />
-                
+
                 <FlatList
                     data={[
                         {key: 'Devin'},
