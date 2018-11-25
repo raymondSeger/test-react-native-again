@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Alert, Button, StyleSheet, Text, View, Image } from 'react-native';
 import { Greeting } from './Greeting.js';
 import { Blink } from './Blink.js';
 import {PizzaTranslator} from "./PizzaTranslator";
@@ -11,12 +11,19 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 30,
     },
+    buttonContainer: {
+        margin: 20
+    },
     red: {
         color: 'red',
     },
 });
 
 export default class App extends React.Component {
+
+    _onPressButton() {
+        Alert.alert('You tapped the button!')
+    }
 
     render() {
         let pic = {
@@ -25,6 +32,13 @@ export default class App extends React.Component {
 
         return (
             <View style={styles.container}>
+
+                <View style={styles.buttonContainer}>
+                    <Button
+                        onPress={this._onPressButton}
+                        title="Press Me"
+                    />
+                </View>
 
                 <PizzaTranslator />
 
