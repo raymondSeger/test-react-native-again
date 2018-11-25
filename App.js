@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Alert, Platform, Button, StyleSheet, Text, View, Image, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
+import { FlatList, ScrollView, Alert, Platform, Button, StyleSheet, Text, View, Image, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
 import { Greeting } from './Greeting.js';
 import { Blink } from './Blink.js';
 import {PizzaTranslator} from "./PizzaTranslator";
@@ -59,40 +59,20 @@ export default class App extends React.Component {
                 </View>
 
                 <PizzaTranslator />
-
-                <ScrollView>
-                    <Text style={{fontSize:96}}>Scroll me plz</Text>
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Text style={{fontSize:96}}>If you like</Text>
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Text style={{fontSize:96}}>Scrolling down</Text>
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Text style={{fontSize:96}}>What's the best</Text>
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Text style={{fontSize:96}}>Framework around?</Text>
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, height: 64}} />
-                    <Text style={{fontSize:80}}>React Native</Text>
-                </ScrollView>
+                
+                <FlatList
+                    data={[
+                        {key: 'Devin'},
+                        {key: 'Jackson'},
+                        {key: 'James'},
+                        {key: 'Joel'},
+                        {key: 'John'},
+                        {key: 'Jillian'},
+                        {key: 'Jimmy'},
+                        {key: 'Julie'},
+                    ]}
+                    renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+                />
 
                 <View style={styles.container}>
 
