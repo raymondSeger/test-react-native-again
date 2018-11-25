@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { Greeting } from './Greeting.js';
 import { Blink } from './Blink.js';
+import {PizzaTranslator} from "./PizzaTranslator";
+
 
 const styles = StyleSheet.create({
     bigblue: {
@@ -23,6 +25,9 @@ export default class App extends React.Component {
 
         return (
             <View style={styles.container}>
+
+                <PizzaTranslator />
+
                 <Blink text='I love to blink' />
 
                 <Text style={styles.red}>just red</Text>
